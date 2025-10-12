@@ -4,6 +4,10 @@
 
 MyQueue::MyQueue() : front(nullptr), rear(nullptr), size(0) {}
 
+MyQueue::~MyQueue() {
+    while (!empty()) pop();
+}
+
 void MyQueue::push(int x) {
     Node* newNode = new Node(x);
     if (rear)

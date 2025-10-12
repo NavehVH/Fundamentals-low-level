@@ -1,10 +1,20 @@
 #include <iostream>
-#include "include/MyListNode.h"
-#include "include/MyStack.h"
-#include "dijkstra.h"
-using namespace std;
+#include "include/MyQueue.h"
 
 int main() {
-    dijkstra_self_test();  // run the demo
+    MyQueue q;
+    q.push(10);
+    q.push(20);
+    q.push(30);
+
+    q.printQueue();   // 10 <- 20 <- 30 <- NULL
+
+    std::cout << "Front: " << q.peek() << std::endl; // 10
+
+    q.pop();
+    q.printQueue();   // 20 <- 30 <- NULL
+
+    std::cout << "Size: " << q.length() << std::endl;
+
     return 0;
 }
