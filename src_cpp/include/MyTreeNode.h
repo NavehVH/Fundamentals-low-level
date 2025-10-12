@@ -2,10 +2,12 @@
 #define MYTREENODE_H
 
 class MyTreeNode {
-public:
+private:
     int val;
     MyTreeNode* left;
     MyTreeNode* right;
+    
+public:
 
     MyTreeNode();
     MyTreeNode(int x);

@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "my_listnode.h": "c"
+        "my_listnode.h": "c",
+        "stdexcept": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
