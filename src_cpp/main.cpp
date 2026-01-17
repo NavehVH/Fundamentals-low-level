@@ -1,20 +1,29 @@
 #include <iostream>
-#include "include/MyQueue.h"
+using namespace std;
+
+int* makeArray(int n) {
+    int arr[n];         // <-- something suspicious here
+    for (int i = 0; i < n; i++) {
+        arr[i] = i * 2;
+    }
+    return arr;         // <-- and here...
+}
+
+void increment(int& x) {
+    x++;
+}
 
 int main() {
-    MyQueue q;
-    q.push(10);
-    q.push(20);
-    q.push(30);
+    int* p = makeArray(5);
 
-    q.printQueue();   // 10 <- 20 <- 30 <- NULL
+    cout << "Array contents: ";
+    for (int i = 0; i < 5; i++) {
+        cout << p[i] << " ";    // <-- may explode
+    }
+    cout << endl;
 
-    std::cout << "Front: " << q.peek() << std::endl; // 10
-
-    q.pop();
-    q.printQueue();   // 20 <- 30 <- NULL
-
-    std::cout << "Size: " << q.length() << std::endl;
+    int* q = nullptr;
+    increment(*q);              // <-- something VERY wrong here
 
     return 0;
 }

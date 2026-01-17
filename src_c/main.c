@@ -1,6 +1,12 @@
 #include <stdio.h>
-#include "peterson_lock.h"
+#include <stdlib.h>
+#include <string.h>
+#include "basics/methods.c"
 
-int main(void) {
-    return peterson_demo();
+int main() {
+    char *x = "hiiii";
+    char *checks = "hiiiix";
+    printf("Hi %d\n", my_strcmp(x, checks));
+    return 0;
 }
+
